@@ -76,5 +76,3 @@ Licencia abierta (por ejemplo MIT) — actualizar según corresponda.
 
 ## 🏷️ Contacto / Créditos
 Iniciativa: Technology with Purpose by Santex. Para dudas o sugerencias, abrir un issue en el repositorio.
-
-¿Querés que guarde este README en formato Markdown y te lo entregue como archivo listo para subir?
