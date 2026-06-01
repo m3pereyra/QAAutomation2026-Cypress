@@ -1,0 +1,12 @@
+{
+  "name": "qaautomation2026-cypress",
+  "version": "1.0.0",
+  "description": "Perfecto — actualizo solo el README con emojis y formato más visual. Aquí va:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
