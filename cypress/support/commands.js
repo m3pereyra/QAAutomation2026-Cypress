@@ -34,3 +34,11 @@ Cypress.Commands.add('login', (user,password) => {
   Cypress.Commands.add('validateInventoryPage', (user,password) => {
         cy.url().should('include', 'inventory.html')
   })
+
+  Cypress.Commands.add('validateCartPage', (user,password) => {
+      cy.url().should('include', '/cart.html')
+})
+
+Cypress.Commands.add('validateCheckoutPage', (user,password) => {
+      cy.url().should('include', '/checkout-step-one.html')
+})

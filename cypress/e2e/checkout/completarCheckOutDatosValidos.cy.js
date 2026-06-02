@@ -1,0 +1,16 @@
+describe('13.0 Agregar un producto al carrito', () => {
+    it('Agregar un producto al carrito', ()=> {
+        cy.login('standard_user','secret_sauce')
+        cy.validateInventoryPage()
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.validateCartPage()
+        cy.get('[data-test="checkout"]').click()
+        cy.get('[data-test="firstName"]').type('Juan')
+        cy.get('[data-test="lastName"]').type('Pérez')
+        cy.get('[data-test="postalCode"]').type('5000')
+        cy.get('[data-test="continue"]').click()
+        cy.get('[data-test="finish"]').click()
+        cy.get('[data-test="complete-header"]').should('be.visible').and('contain','Thank you for your order!')
+        })
+})

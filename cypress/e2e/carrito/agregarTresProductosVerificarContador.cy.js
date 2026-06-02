@@ -1,0 +1,15 @@
+describe('11.0 Agregar un producto al carrito', () => {
+    it('Agregar un producto al carrito', ()=> {
+        cy.login('standard_user','secret_sauce')
+        cy.validateInventoryPage()
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain','1')
+        cy.get('[data-test="remove-sauce-labs-backpack"]').should('be.visible')
+        cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
+        cy.get('[data-test="remove-sauce-labs-bike-light"]').should('be.visible')
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain','2')
+        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
+        cy.get('[data-test="remove-sauce-labs-bolt-t-shirt"]').should('be.visible')
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain','3')
+        })
+})
