@@ -1,4 +1,4 @@
-describe('Logout desde el menú hamburguesa', () => {
+describe('5.0 Logout desde el menú hamburguesa', () => {
     it('Logout desde el menú hamburguesa', ()=> {
         cy.login('standard_user','secret_sauce')
         cy.validateInventoryPage()

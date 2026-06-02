@@ -1,4 +1,4 @@
-describe('Login con usuario bloqueado (locked_out_user)', () => {
+describe('4.0 Login con usuario bloqueado (locked_out_user)', () => {
     it('Login con usuario bloqueado (locked_out_user)', ()=> {
         cy.login('locked_out_user','secret_sauce')
         cy.get('[data-test="error"]').should('be.visible')
