@@ -1,0 +1,42 @@
+describe('10.0 Agregar un producto al carrito', () => {
+
+    beforeEach(() => {
+        cy.fixture('dataUsers').as('users')
+    })
+
+    it('Agregar un producto al carrito', function () {
+        cy.login(this.users.standard_user, this.users.password)
+        cy.validateInventoryPage()
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain', '1')
+        cy.get('[data-test="remove-sauce-labs-backpack"]').should('be.visible')
+    })
+
+    it('Agregar un producto al carrito', function () {
+        cy.login(this.users.standard_user, this.users.password)
+        cy.validateInventoryPage()
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain', '1')
+        cy.get('[data-test="remove-sauce-labs-backpack"]').should('be.visible')
+        cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
+        cy.get('[data-test="remove-sauce-labs-bike-light"]').should('be.visible')
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain', '2')
+        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
+        cy.get('[data-test="remove-sauce-labs-bolt-t-shirt"]').should('be.visible')
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain', '3')
+    })
+
+    it('Agregar un producto al carrito', function () {
+        cy.login(this.users.standard_user, this.users.password)
+        cy.validateInventoryPage()
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="remove-sauce-labs-backpack"]').should('be.visible')
+        cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
+        cy.get('[data-test="remove-sauce-labs-bike-light"]').should('be.visible')
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible').and('contain', '2')
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.validateCartPage()
+        cy.get('[data-test="remove-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-link"]').should('be.visible').and('contain', '1')
+    })
+})
